@@ -1,0 +1,16 @@
+language: node_js
+before_install:
+- nvm install stable
+- nvm use stable
+- npm install
+- npm install -g conventional-github-releaser
+install: true
+before_script: 
+script:
+- "./script/changelog.sh"
+after_script: 
+env:
+  global:
+  - GH_USER=d9iracd
+  - GH_EMAIL=herb14@hotmail.com
+  - secure: ifDFVdrxn74gLRyrv/ZM2kae4b0MaMI7kkOo6zf4mOLf/hoORBSY5P2wI/rzb/IU9WsQ+qts5EBTi0k9j4kXwtSjbUa3S5jeTC1CMIwsHu5QO1RRTVB19KONh/VqFEa3jUbtuOdLFDTLvYOt6Kh3hh8hPbNKB0YhINLUI8nZc5WxCQyEouEsRGEIv28QOwe0jQrAYluW6QCinTLjKcRLXu7GwAZWL/GVfZmQtJIacY66M5Bk8cyVaSphatzXx/VQ6e+YJZ5Xkx2FPpoURTgh7LJU0JzFtIbJ2MqvcqJRvhsCZxwhO/g1u1AmstXDClgF+4hkQIWuezDtEOIPP4L9owUPVQLTSDiSzXHbic7HNoEodcqGOIVW2ON7WoPqXgd6oc/SbNIMzZnaIOZ00SbxUPCd1yN/rRB9Rqz/7u1xlLf5EeDTE81Wtb+jtTUnl+lUaono1dIN4EL5X4o6nrxI48a2emXYdaQNty493veS7mFmESDB4MiAnSfbuXFsZT9QFWk501vgikBUF8U6TbKmuA95dDB85ZdKudsgQHG6hJH87qJjX+afum/sr8Asnrc4k2PEfYfeyyqyJN26Fci57VQw5PuWw+gEWbk1CZ3TlmiSOVXBpZCAF4UJU6s0VQy5NdFgOcG3zjQlGU9XNK7TmrgKhnhlYZtDQoPYhNHnp6U=
