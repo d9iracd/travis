@@ -23,8 +23,8 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     # Rename last commit
     git commit --amend -m "ci(release): generate #~CHANGELOG.md~# for version ${GIT_TAG}"
 
-    conventional-github-releaser -t $GH_TOKEN -r 0
     git push origin master
+    conventional-github-releaser -t $GH_TOKEN -r 0
 else
     echo $TRAVIS_BRANCH
 fi
