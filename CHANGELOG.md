@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# 1.1.0 (2017-08-23)
+
+
+### Bug Fixes
+
+* **release:** execute conventional-github-releaser after release ([a365ebb](https://github.com/d9iracd/travis/commit/a365ebb))
+* **release:** execute push before tag ([a6b0286](https://github.com/d9iracd/travis/commit/a6b0286))
+* **release:** new.file ([0ab0ced](https://github.com/d9iracd/travis/commit/0ab0ced))
+
+
+### Features
+
+* **app:** initial commit ([8798d12](https://github.com/d9iracd/travis/commit/8798d12))
+* **build:** increment version number ([5c7fa0f](https://github.com/d9iracd/travis/commit/5c7fa0f))
+* **build:** new message ([2c6217a](https://github.com/d9iracd/travis/commit/2c6217a))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/d9iracd/travis/compare/1.2.1...1.2.2) (2017-08-23)
 
