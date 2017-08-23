@@ -13,20 +13,19 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     
     if [[ $TRAVIS_COMMIT_MESSAGE != *"**version**"* && $TRAVIS_COMMIT_MESSAGE != *"**CHANGELOG.md**"* ]]; then
         git checkout master -f
-    fi
-    
-    npm run release -- -m "ci(release): generate **CHANGELOG.md** for version %s"
-    # # Get version number from package
-    export GIT_TAG=$(jq -r ".version" package.json)
-    conventional-github-releaser -t $GH_TOKEN -r 0
-    # # Update CFBundleShortVersionString   
-    echo $GIT_TAG >> tag.txt
-    git add -A
-    # Rename last commit
-    git commit -m "ci(build): increment **version** ${GIT_TAG}"
 
-    git push origin master
-    
+        npm run release -- -m "ci(release): generate **CHANGELOG.md** for version %s"
+        # # Get version number from package
+        export GIT_TAG=$(jq -r ".version" package.json)
+        conventional-github-releaser -t $GH_TOKEN -r 0
+        # # Update CFBundleShortVersionString   
+        echo $GIT_TAG >> tag.txt
+        git add -A
+        # Rename last commit
+        git commit -m "ci(build): increment **version** ${GIT_TAG}"
+
+        git push origin master
+    fi
 else
     echo $TRAVIS_BRANCH
 fi
