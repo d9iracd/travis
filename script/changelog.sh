@@ -16,7 +16,7 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     npm run release
     # # Get version number from package
     export GIT_TAG=$(jq -r ".version" package.json)
-
+    conventional-github-releaser -t $GH_TOKEN -r 0
     # # Update CFBundleShortVersionString   
     echo $GIT_TAG >> tag.txt
     git add -A
@@ -24,7 +24,7 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     git commit --amend -m "ci(release): generate #~CHANGELOG.md~# for version ${GIT_TAG}"
 
     git push origin master
-    conventional-github-releaser -t $GH_TOKEN -r 0
+    
 else
     echo $TRAVIS_BRANCH
 fi
