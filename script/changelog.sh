@@ -1,8 +1,8 @@
 #!/bin/bash
+echo ---------------TRAVIS_BRANCH----------------
+    echo $TRAVIS_BRANCH
 echo -----------------CHANGELOG-------------------
 if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-    echo ---------------TRAVIS_BRANCH----------------
-    echo $TRAVIS_BRANCH
     echo ------------------CONFIG--------------------
     git config --global user.email $GH_EMAIL
     git config --global user.name "Travis CI"
