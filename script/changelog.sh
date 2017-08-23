@@ -9,7 +9,7 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     git remote add origin https://$GH_USER:$GH_TOKEN@github.com/d9iracd/travis.git
     echo ------------------RELEASE--------------------
     
-    if [[ $TRAVIS_COMMIT_MESSAGE != *"#~CHANGELOG.md~#"* ]]; then
+    if [[ $TRAVIS_COMMIT_MESSAGE != *"**version**"* ]]; then
         git checkout master -f
     fi
     
@@ -21,7 +21,7 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     echo $GIT_TAG >> tag.txt
     git add -A
     # Rename last commit
-    git commit -m "ci(build): increment version ${GIT_TAG}"
+    git commit -m "ci(build): increment **version** ${GIT_TAG}"
 
     git push origin master
     
