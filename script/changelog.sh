@@ -13,7 +13,7 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
         git checkout master -f
     fi
     
-    npm run release
+    npm run release -- -m "ci(release): generate #~CHANGELOG.md~# for version %s"
     # # Get version number from package
     export GIT_TAG=$(jq -r ".version" package.json)
     conventional-github-releaser -t $GH_TOKEN -r 0
@@ -21,7 +21,7 @@ if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     echo $GIT_TAG >> tag.txt
     git add -A
     # Rename last commit
-    git commit --amend -m "ci(release): generate #~CHANGELOG.md~# for version ${GIT_TAG}"
+    git commit -m "ci(build): increment version ${GIT_TAG}"
 
     git push origin master
     
