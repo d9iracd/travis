@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/d9iracd/travis/compare/1.1.4...1.2.0) (2017-08-23)
+
+
+### Features
+
+* **build:** increment version number ([5c7fa0f](https://github.com/d9iracd/travis/commit/5c7fa0f))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/d9iracd/travis/compare/1.1.1...1.1.3) (2017-08-23)
 
